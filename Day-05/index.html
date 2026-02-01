@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevConf 2026 - The Future of Web Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-dev">Dev</span><span class="logo-conf">Conf</span>
+                <span class="logo-year">2026</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="flex-menu" id="flexMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#register" class="nav-cta">Register Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-hero" id="home">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+            <div class="grid-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>March 15-17, 2026 • Mumbai, India</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">The Future of</span>
+                <span class="title-line highlight">Web Development</span>
+            </h1>
+            <p class="hero-subtitle">Join India's most influential developer ecosystem. Three days of groundbreaking insights, hands-on workshops, and unparalleled networking with 5,000+ developers, 100+ speakers, and industry pioneers shaping the next generation of web technology.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Developers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Speakers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Workshops</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Days</div>
+                </div>
+            </div>
+            <div class="hero-btns">
+                <a href="#register" class="btn btn-primary">
+                    <span>Secure My Pass</span>
+                    <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="#about" class="btn btn-secondary">
+                    <span>View Mission</span>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="why-attend" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why DevConf 2026</span>
+                <h2 class="section-title">Transform Your Development Journey</h2>
+                <p class="section-description">DevConf isn't just another tech conference—it's a catalyst for innovation. Where bleeding-edge technology meets practical implementation, where theoretical concepts become production-ready solutions, and where your network becomes your net worth.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card card-1">
+                    <div class="card-number">01</div>
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3>Technical Depth</h3>
+                    <p>Dive deep into cutting-edge technologies with comprehensive workshops led by engineers from Google, Meta, Microsoft, and Amazon. Master serverless architectures, AI/ML integration, Web3 fundamentals, and performance optimization techniques that scale to millions of users.</p>
+                    <ul class="benefit-features">
+                        <li>50+ Hands-on Workshops</li>
+                        <li>Advanced Code Labs</li>
+                        <li>Real Production Case Studies</li>
+                        <li>Architecture Deep Dives</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card card-2">
+                    <div class="card-number">02</div>
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Networking Excellence</h3>
+                    <p>Connect with a curated community of 5,000+ developers, CTOs, startup founders, and tech leaders. Participate in exclusive networking sessions, roundtable discussions, and social events designed to forge lasting professional relationships and potential collaborations.</p>
+                    <ul class="benefit-features">
+                        <li>VIP Networking Lounges</li>
+                        <li>1-on-1 Mentor Sessions</li>
+                        <li>Startup Pitch Events</li>
+                        <li>Company Booth Interactions</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card card-3">
+                    <div class="card-number">03</div>
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Career Acceleration</h3>
+                    <p>Unlock unprecedented career opportunities with our dedicated hiring track featuring 50+ companies actively recruiting. Attend career workshops, portfolio reviews, and get direct access to hiring managers from leading tech companies looking for talent like you.</p>
+                    <ul class="benefit-features">
+                        <li>On-site Job Fair</li>
+                        <li>Resume/Portfolio Reviews</li>
+                        <li>Career Coaching Sessions</li>
+                        <li>Exclusive Job Postings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="conference-features">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Industry-Recognized Certification</h4>
+                    <p>Earn CPD-accredited certificates for attended sessions and completed workshops</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <h4>Lifetime Access to Content</h4>
+                    <p>Access recordings, slides, and exclusive resources from all sessions forever</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎁</div>
+                    <h4>Premium Swag & Resources</h4>
+                    <p>Take home exclusive DevConf merchandise, books, and developer tools worth ₹25,000+</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌍</div>
+                    <h4>Global Developer Community</h4>
+                    <p>Join our exclusive online community with continued learning and collaboration opportunities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="speakers-section" id="speakers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Meet The Visionaries</span>
+                <h1 class="section-title">Our Global Speaker Lineup</h1>
+                <p class="section-description">Learn from the brilliant minds architecting the future of web development. Our speakers aren't just talking about innovation—they're building it at companies shaping billions of user experiences daily.</p>
+            </div>
+
+            <div class="speaker-grid">
+                <div class="speaker-card">
+                    <div class="speaker-image-container">
+                        <div class="image-wrapper">
+                            <div class="speaker-image speaker-1"></div>
+                            <div class="speaker-overlay">
+                                <a href="#" class="social-link">LinkedIn →</a>
+                                <a href="#" class="social-link">Twitter →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name">Dr. Sarah Chen</h3>
+                        <div class="speaker-title">Lead AI Researcher</div>
+                        <div class="speaker-company">Google AI</div>
+                        <p class="speaker-bio">Leading researcher at Google AI with a Ph.D. from Stanford. Published 50+ papers on Large Language Model architectures and their practical applications. Her work on transformer optimization has reduced inference costs by 40% across Google's production systems.</p>
+                        <div class="speaker-topics">
+                            <span class="topic-tag">AI/ML Integration</span>
+                            <span class="topic-tag">LLM Architecture</span>
+                            <span class="topic-tag">Performance Optimization</span>
+                        </div>
+                        <div class="speaker-session">
+                            <strong>Keynote:</strong> "The Future of AI-Powered Development"
+                            <br><small>Day 1, 9:00 AM - Main Auditorium</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image-container">
+                        <div class="image-wrapper">
+                            <div class="speaker-image speaker-2"></div>
+                            <div class="speaker-overlay">
+                                <a href="#" class="social-link">LinkedIn →</a>
+                                <a href="#" class="social-link">Twitter →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name">Mark Thorne</h3>
+                        <div class="speaker-title">CTO & Founder</div>
+                        <div class="speaker-company">CloudMesh</div>
+                        <p class="speaker-bio">Architect behind some of the world's largest serverless deployments handling 10M+ requests per second. Former Principal Engineer at AWS Lambda team. Built CloudMesh from a weekend project to a $500M valuation platform powering 100,000+ applications globally.</p>
+                        <div class="speaker-topics">
+                            <span class="topic-tag">Serverless Architecture</span>
+                            <span class="topic-tag">Cloud Infrastructure</span>
+                            <span class="topic-tag">Scalability</span>
+                        </div>
+                        <div class="speaker-session">
+                            <strong>Workshop:</strong> "Building Planet-Scale Serverless Applications"
+                            <br><small>Day 1, 11:30 AM - Lab 102</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image-container">
+                        <div class="image-wrapper">
+                            <div class="speaker-image speaker-3"></div>
+                            <div class="speaker-overlay">
+                                <a href="#" class="social-link">LinkedIn →</a>
+                                <a href="#" class="social-link">Twitter →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name">Priya Sharma</h3>
+                        <div class="speaker-title">Principal Engineer</div>
+                        <div class="speaker-company">Microsoft Azure</div>
+                        <p class="speaker-bio">Leading Azure DevOps innovation and cloud-native development practices at Microsoft. Pioneered container orchestration strategies used by Fortune 500 companies. Regular contributor to Kubernetes and holds 12 patents in distributed systems architecture.</p>
+                        <div class="speaker-topics">
+                            <span class="topic-tag">DevOps</span>
+                            <span class="topic-tag">Kubernetes</span>
+                            <span class="topic-tag">Cloud Native</span>
+                        </div>
+                        <div class="speaker-session">
+                            <strong>Talk:</strong> "Modern DevOps: From CI/CD to GitOps"
+                            <br><small>Day 2, 2:00 PM - Hall A</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image-container">
+                        <div class="image-wrapper">
+                            <div class="speaker-image speaker-4"></div>
+                            <div class="speaker-overlay">
+                                <a href="#" class="social-link">LinkedIn →</a>
+                                <a href="#" class="social-link">Twitter →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name">Alex Rivera</h3>
+                        <div class="speaker-title">Tech Lead</div>
+                        <div class="speaker-company">Meta (React Core Team)</div>
+                        <p class="speaker-bio">Core maintainer of React and instrumental in shipping React Server Components, Suspense, and Concurrent Features. Previously architected Facebook's News Feed rendering pipeline. Passionate about making web development more intuitive and performant for millions of developers worldwide.</p>
+                        <div class="speaker-topics">
+                            <span class="topic-tag">React Ecosystem</span>
+                            <span class="topic-tag">Frontend Performance</span>
+                            <span class="topic-tag">Web Standards</span>
+                        </div>
+                        <div class="speaker-session">
+                            <strong>Workshop:</strong> "Advanced React Patterns & Server Components"
+                            <br><small>Day 2, 10:00 AM - Lab 201</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image-container">
+                        <div class="image-wrapper">
+                            <div class="speaker-image speaker-5"></div>
+                            <div class="speaker-overlay">
+                                <a href="#" class="social-link">LinkedIn →</a>
+                                <a href="#" class="social-link">Twitter →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name">Kenji Yamamoto</h3>
+                        <div class="speaker-title">Senior Staff Engineer</div>
+                        <div class="speaker-company">Netflix</div>
+                        <p class="speaker-bio">Drives web performance initiatives serving 230M+ subscribers globally. Reduced Netflix's homepage load time by 50% through innovative optimization techniques. Expert in edge computing, CDN strategies, and video streaming technologies that deliver seamless experiences across devices.</p>
+                        <div class="speaker-topics">
+                            <span class="topic-tag">Web Performance</span>
+                            <span class="topic-tag">Streaming Tech</span>
+                            <span class="topic-tag">Edge Computing</span>
+                        </div>
+                        <div class="speaker-session">
+                            <strong>Talk:</strong> "Optimizing for Global Scale: Netflix's Playbook"
+                            <br><small>Day 3, 11:00 AM - Main Auditorium</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image-container">
+                        <div class="image-wrapper">
+                            <div class="speaker-image speaker-6"></div>
+                            <div class="speaker-overlay">
+                                <a href="#" class="social-link">LinkedIn →</a>
+                                <a href="#" class="social-link">Twitter →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-content">
+                        <h3 class="speaker-name">Aisha Patel</h3>
+                        <div class="speaker-title">Director of Engineering</div>
+                        <div class="speaker-company">Stripe</div>
+                        <p class="speaker-bio">Leading Stripe's payments infrastructure team processing $640B+ annually. Expert in building secure, scalable financial systems and API design. Former Principal at PayPal where she architected the fraud detection system. Advocate for developer experience and API-first design principles.</p>
+                        <div class="speaker-topics">
+                            <span class="topic-tag">API Design</span>
+                            <span class="topic-tag">Payment Systems</span>
+                            <span class="topic-tag">Security</span>
+                        </div>
+                        <div class="speaker-session">
+                            <strong>Panel:</strong> "Building Developer-First Products"
+                            <br><small>Day 3, 3:00 PM - Hall B</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="speaker-cta">
+                <p>And 94 more incredible speakers from Amazon, Airbnb, Uber, Spotify, and leading startups</p>
+                <a href="#register" class="btn btn-accent">View Full Speaker List</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Three Days of Innovation</span>
+                <h1 class="section-title">Conference Schedule</h1>
+                <p class="section-description">Carefully curated programming across three tracks: Technical Deep Dives, Leadership & Career, and Emerging Technologies. Choose your own adventure or attend everything—all sessions are recorded.</p>
+            </div>
+
+            <div class="schedule-tabs">
+                <button class="tab-btn active" data-day="day1">Day 1 - March 15</button>
+                <button class="tab-btn" data-day="day2">Day 2 - March 16</button>
+                <button class="tab-btn" data-day="day3">Day 3 - March 17</button>
+            </div>
+
+            <div class="schedule-content">
+                <!-- Day 1 -->
+                <div class="day-schedule active" id="day1">
+                    <div class="timeline">
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">09:00 AM</span>
+                            </div>
+                            <div class="time-content keynote">
+                                <div class="session-type">Keynote</div>
+                                <h3>The Future of AI-Powered Development</h3>
+                                <p class="session-speaker">Dr. Sarah Chen - Google AI</p>
+                                <p class="session-description">Explore how AI and LLMs are fundamentally changing how we write, test, and deploy code. From GitHub Copilot to autonomous agents, discover what's next in AI-assisted development.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Main Auditorium</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 mins</span>
+                                    <span class="meta-item level-advanced">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">11:30 AM</span>
+                            </div>
+                            <div class="time-content workshop">
+                                <div class="session-type">Hands-on Workshop</div>
+                                <h3>Building Planet-Scale Serverless Applications</h3>
+                                <p class="session-speaker">Mark Thorne - CloudMesh</p>
+                                <p class="session-description">Build a production-grade serverless application. Learn CloudFormation/Terraform, Lambda optimization, DynamoDB design patterns, and cost optimization strategies.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Lab 102</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 120 mins</span>
+                                    <span class="meta-item seats-limited">Limited Seats</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">01:00 PM</span>
+                            </div>
+                            <div class="time-content lunch">
+                                <div class="session-type">Networking</div>
+                                <h3>Project Lunch & Networking</h3>
+                                <p class="session-description">Gourmet catered lunch with networking zones. Meet speakers, connect with developers, visit sponsor booths.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Terrace Garden</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 mins</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">03:00 PM</span>
+                            </div>
+                            <div class="time-content">
+                                <div class="session-type">Panel Discussion</div>
+                                <h3>The State of Modern Frontend</h3>
+                                <p class="session-speaker">Industry leaders debate React vs Vue vs Svelte</p>
+                                <p class="session-description">Server Components, Island Architecture, and the future of frontend development.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hall A</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="day-schedule" id="day2">
+                    <div class="timeline">
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">09:00 AM</span>
+                            </div>
+                            <div class="time-content keynote">
+                                <div class="session-type">Keynote</div>
+                                <h3>The Cloud Native Revolution</h3>
+                                <p class="session-speaker">Priya Sharma - Microsoft Azure</p>
+                                <p class="session-description">Explore cloud-native architectures, service mesh, observability patterns, and where we're heading post-Kubernetes.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Main Auditorium</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 mins</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">10:30 AM</span>
+                            </div>
+                            <div class="time-content workshop">
+                                <div class="session-type">Workshop</div>
+                                <h3>Advanced React Patterns & Server Components</h3>
+                                <p class="session-speaker">Alex Rivera - Meta</p>
+                                <p class="session-description">Master Server Components, Suspense, concurrent rendering. Build with Next.js 15 and streaming SSR.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Lab 201</span>
+                                    <span class="meta-item seats-limited">Sold Out</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">03:00 PM</span>
+                            </div>
+                            <div class="time-content">
+                                <div class="session-type">Technical Talk</div>
+                                <h3>Building Secure Payment Systems at Scale</h3>
+                                <p class="session-speaker">Aisha Patel - Stripe</p>
+                                <p class="session-description">Learn how Stripe processes $640B+ annually. API design, security, fraud detection, and database sharding.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hall A</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 50 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="day-schedule" id="day3">
+                    <div class="timeline">
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">11:00 AM</span>
+                            </div>
+                            <div class="time-content keynote">
+                                <div class="session-type">Keynote</div>
+                                <h3>Optimizing for Global Scale: Netflix's Playbook</h3>
+                                <p class="session-speaker">Kenji Yamamoto - Netflix</p>
+                                <p class="session-description">CDN strategy, adaptive streaming, global edge deployment, chaos engineering, and A/B testing at scale.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Main Auditorium</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 mins</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">03:00 PM</span>
+                            </div>
+                            <div class="time-content">
+                                <div class="session-type">Panel</div>
+                                <h3>Building Developer-First Products</h3>
+                                <p class="session-speaker">Product leaders discuss APIs and tools developers love</p>
+                                <p class="session-description">Documentation, onboarding, SDK design, developer relations, community building, and monetization.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hall B</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 mins</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-item">
+                            <div class="time-marker">
+                                <div class="time-dot"></div>
+                                <span class="time">06:00 PM</span>
+                            </div>
+                            <div class="time-content special">
+                                <div class="session-type">Closing Ceremony</div>
+                                <h3>Awards & Closing Remarks</h3>
+                                <p class="session-description">Hackathon winners, "Developer of the Year" awards, and DevConf 2027 teaser.</p>
+                                <div class="session-meta">
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Main Auditorium</span>
+                                    <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-note">
+                <p><strong>Note:</strong> All registered attendees receive lifetime access to session recordings. Mobile app available for personalized schedule building.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors-section" id="sponsors">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Powered By Innovation Leaders</span>
+                <h2 class="section-title">Our Sponsors & Partners</h2>
+                <p class="section-description">DevConf 2026 is made possible by companies committed to advancing the developer ecosystem.</p>
+            </div>
+
+            <div class="sponsors-grid">
+                <div class="sponsor-tier platinum-tier">
+                    <h3 class="tier-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        Platinum Sponsors
+                    </h3>
+                    <div class="sponsor-logos platinum">
+                        <div class="sponsor-logo large-logo">
+                            <div class="logo-content">
+                                <span class="company-name">Google</span>
+                                <span class="company-tagline">Cloud & AI</span>
+                            </div>
+                        </div>
+                        <div class="sponsor-logo large-logo">
+                            <div class="logo-content">
+                                <span class="company-name">Microsoft</span>
+                                <span class="company-tagline">Azure & GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-tier gold-tier">
+                    <h3 class="tier-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        Gold Sponsors
+                    </h3>
+                    <div class="sponsor-logos gold">
+                        <div class="sponsor-logo">Amazon AWS</div>
+                        <div class="sponsor-logo">Meta</div>
+                        <div class="sponsor-logo">Netflix</div>
+                        <div class="sponsor-logo">Stripe</div>
+                    </div>
+                </div>
+
+                <div class="sponsor-tier silver-tier">
+                    <h3 class="tier-title">Silver Sponsors</h3>
+                    <div class="sponsor-logos silver">
+                        <div class="sponsor-logo small-logo">Vercel</div>
+                        <div class="sponsor-logo small-logo">MongoDB</div>
+                        <div class="sponsor-logo small-logo">Cloudflare</div>
+                        <div class="sponsor-logo small-logo">Supabase</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sponsor-cta">
+                <h3>Interested in Sponsoring DevConf 2027?</h3>
+                <p>Reach 5,000+ developers and showcase your technology</p>
+                <a href="#contact" class="btn btn-accent">View Sponsorship Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration-section" id="register">
+        <div class="registration-overlay"></div>
+        <div class="container">
+            <div class="registration-content">
+                <span class="section-badge light">Limited Spots Available</span>
+                <h2 class="registration-title">Secure Your Spot at DevConf 2026</h2>
+                <p class="registration-subtitle">Join 5,000 developers for three transformative days. Early bird pricing ends February 15.</p>
+                
+                <div class="pricing-cards">
+                    <div class="pricing-card basic">
+                        <div class="price-header">
+                            <h4>Standard Pass</h4>
+                            <div class="price">
+                                <span class="currency">₹</span>
+                                <span class="amount">12,999</span>
+                            </div>
+                            <p class="price-note">Regular: ₹18,999</p>
+                        </div>
+                        <ul class="price-features">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> All talks & panels</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Conference materials</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Networking events</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Recording access</li>
+                        </ul>
+                        <a href="#" class="btn btn-price">Select Standard</a>
+                    </div>
+
+                    <div class="pricing-card premium featured">
+                        <div class="featured-badge">Most Popular</div>
+                        <div class="price-header">
+                            <h4>Workshop Pass</h4>
+                            <div class="price">
+                                <span class="currency">₹</span>
+                                <span class="amount">24,999</span>
+                            </div>
+                            <p class="price-note">Regular: ₹34,999</p>
+                        </div>
+                        <ul class="price-features">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Everything in Standard</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5 workshops</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Mentor session</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Premium swag</li>
+                        </ul>
+                        <a href="#" class="btn btn-price btn-primary">Select Workshop</a>
+                    </div>
+
+                    <div class="pricing-card vip">
+                        <div class="price-header">
+                            <h4>VIP Pass</h4>
+                            <div class="price">
+                                <span class="currency">₹</span>
+                                <span class="amount">49,999</span>
+                            </div>
+                            <p class="price-note">Limited to 100</p>
+                        </div>
+                        <ul class="price-features">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Everything in Workshop</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Unlimited workshops</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> VIP lounge access</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Speaker dinners</li>
+                        </ul>
+                        <a href="#" class="btn btn-price">Select VIP</a>
+                    </div>
+                </div>
+
+                <p class="registration-note">Student & group discounts available. Contact us for special pricing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section brand">
+                    <h3><span class="logo-dev">Dev</span><span class="logo-conf">Conf</span> <span class="year-badge">2026</span></h3>
+                    <p>India's premier developer conference bringing together tech enthusiasts and industry leaders.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">YT</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Code of Conduct</a></li>
+                        <li><a href="#">Speaker Guidelines</a></li>
+                        <li><a href="#">Sponsor Packages</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@devconf.in</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DevConf. All rights reserved. Built with passion for developers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // Custom Cursor
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+            cursorOutline.style.left = e.clientX + 'px';
+            cursorOutline.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button, .btn').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        });
+
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const flexMenu = document.getElementById('flexMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            flexMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.flex-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                flexMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active Nav
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.flex-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Counter Animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Stats Counter on Scroll
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => animateCounter(counter));
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats) statsObserver.observe(heroStats);
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .speaker-card, .time-item, .feature-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Schedule Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const daySchedules = document.querySelectorAll('.day-schedule');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const day = btn.getAttribute('data-day');
+                
+                tabBtns.forEach(b => b.classList.remove('active'));
+                daySchedules.forEach(d => d.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(day).classList.add('active');
+            });
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero entrance
+        gsap.from('.hero-badge', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 0.3
+        });
+
+        gsap.from('.hero-title .title-line', {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            delay: 0.5
+        });
+
+        gsap.from('.hero-subtitle', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 1
+        });
+
+        gsap.from('.hero-stats', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 1.2
+        });
+
+        gsap.from('.hero-btns', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 1.4
+        });
+
+        // Floating shapes
+        gsap.to('.shape-1', {
+            y: -30,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power1.inOut'
+        });
+
+        gsap.to('.shape-2', {
+            y: 40,
+            x: 30,
+            duration: 4,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power1.inOut'
+        });
+
+        gsap.to('.shape-3', {
+            x: -40,
+            y: 20,
+            duration: 3.5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power1.inOut'
+        });
+
+        // Section Headers
+        gsap.utils.toArray('.section-header').forEach(header => {
+            gsap.from(header, {
+                scrollTrigger: {
+                    trigger: header,
+                    start: 'top 80%'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1
+            });
+        });
+    </script>
+</body>
+</html>
