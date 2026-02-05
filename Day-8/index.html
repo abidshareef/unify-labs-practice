@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Architect | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="accent-text">&lt;DEV</span><span class="text-main">/&gt;</span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#skills">Stack</a>
+                <a href="#projects">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-controls">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </label>
+                </div>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="section hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <div class="status-badge"><span class="pulsing-dot"></span> Open to Work</div>
+                    <h1>
+                        Creative <br>
+                        <span class="gradient-text">Technologist</span>
+                    </h1>
+                    <div class="console-line">
+                        <span class="prompt">></span>
+                        <span id="typewriter"></span><span class="cursor">_</span>
+                    </div>
+                    <p class="subtitle">50+ Years bridging human creativity and machine logic. Specializing in Scalable Web Architecture & AI Integration.</p>
+                    <div class="cta-wrapper">
+                        <a href="#projects" class="btn btn-primary">View Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="glass-card" id="tiltCard">
+                        <div class="card-content">
+                            <div class="avatar-circle">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h2>Senior Dev</h2>
+                            <p>Full Stack & AI</p>
+                            <div class="stats-row">
+                                <div class="stat"><span>50+</span><small>Years</small></div>
+                                <div class="stat"><span>100+</span><small>Projects</small></div>
+                            </div>
+                            <div class="tech-dots">
+                                <span class="dot py"></span>
+                                <span class="dot js"></span>
+                                <span class="dot re"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section bg-alt">
+            <h2 class="section-header">Technical <span class="accent-text">Mastery</span></h2>
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-item"><i class="fab fa-react"></i> React</div>
+                    <div class="skill-item"><i class="fab fa-node"></i> Node.js</div>
+                    <div class="skill-item"><i class="fab fa-aws"></i> AWS</div>
+                    <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+                    <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-item"><i class="fab fa-react"></i> React</div>
+                    <div class="skill-item"><i class="fab fa-node"></i> Node.js</div>
+                    <div class="skill-item"><i class="fab fa-aws"></i> AWS</div>
+                    <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-header">Selected <span class="accent-text">Deployments</span></h2>
+                <div class="projects-grid">
+                    
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <i class="fas fa-brain big-icon"></i>
+                                <h3>Cognix AI</h3>
+                                <p class="hint">Click for Details</p>
+                            </div>
+                            <div class="flip-back">
+                                <h3>Cognix AI</h3>
+                                <p>Enterprise NLP Chatbot handling 1M+ requests.</p>
+                                <div class="tags"><span>Python</span><span>TensorFlow</span></div>
+                                <a href="project-cognix.html" class="btn-link">View Project &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <i class="fas fa-chart-line big-icon"></i>
+                                <h3>MarketFlow</h3>
+                                <p class="hint">Click for Details</p>
+                            </div>
+                            <div class="flip-back">
+                                <h3>MarketFlow</h3>
+                                <p>Real-time stock prediction engine using LSTM.</p>
+                                <div class="tags"><span>D3.js</span><span>Node.js</span></div>
+                                <a href="project-market.html" class="btn-link">View Project &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <i class="fas fa-shield-alt big-icon"></i>
+                                <h3>SecurOps</h3>
+                                <p class="hint">Click for Details</p>
+                            </div>
+                            <div class="flip-back">
+                                <h3>SecurOps</h3>
+                                <p>Automated penetration testing suite for cloud.</p>
+                                <div class="tags"><span>Rust</span><span>Docker</span></div>
+                                <a href="project-net.html" class="btn-link">View Project &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-alt">
+            <div class="container contact-wrapper">
+                <div class="glass-form">
+                    <h2>Initialize Contact</h2>
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" required>
+                            <label>Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea required></textarea>
+                            <label>Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Senior Architect. Built with &hearts; and Code.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
