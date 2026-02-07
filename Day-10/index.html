@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone - Login & Team</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='550'%3E%3Crect width='300' height='550' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23999'%3EInstagram Feed%3C/text%3E%3C/svg%3E" alt="Instagram screenshot">
+                </div>
+            </div>
+            
+            <div class="login-forms">
+                <div class="form-box">
+                    <h1 class="logo">Instagram</h1>
+                    
+                    <form id="loginForm" novalidate>
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="username" 
+                                name="username"
+                                required
+                                autocomplete="username"
+                            >
+                            <label for="username">Phone number, username, or email</label>
+                        </div>
+                        
+                        <div class="input-group">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password"
+                                required
+                                minlength="6"
+                                autocomplete="current-password"
+                            >
+                            <label for="password">Password</label>
+                            <button type="button" class="toggle-password" aria-label="Show password">Show</button>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" id="loginBtn">Log in</button>
+                        
+                        <div class="divider">
+                            <span>OR</span>
+                        </div>
+                        
+                        <a href="#" class="fb-login">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#385185">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Log in with Facebook
+                        </a>
+                        
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </form>
+                </div>
+                
+                <div class="form-box signup-box">
+                    <p>Don't have an account? <a href="#signup">Sign up</a></p>
+                </div>
+                
+                <div class="get-app">
+                    <p>Get the app.</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-store">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'%3E%3Crect width='120' height='40' rx='5' fill='%23000'/%3E%3Ctext x='60' y='22' font-family='Arial' font-size='10' fill='%23fff' text-anchor='middle'%3EApp Store%3C/text%3E%3C/svg%3E" alt="Download on the App Store">
+                        </a>
+                        <a href="#" class="google-play">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'%3E%3Crect width='120' height='40' rx='5' fill='%23000'/%3E%3Ctext x='60' y='22' font-family='Arial' font-size='10' fill='%23fff' text-anchor='middle'%3EGoogle Play%3C/text%3E%3C/svg%3E" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="team-container">
+            <h2 class="team-title">Our Team</h2>
+            <p class="team-subtitle">Meet the talented individuals behind our success</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="card-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ccircle cx='150' cy='150' r='150' fill='%23e1306c'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='80' fill='%23fff'%3ESA%3C/text%3E%3C/svg%3E" alt="Sarah Anderson">
+                        <div class="social-overlay">
+                            <a href="#" aria-label="Twitter" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="card-name">Sarah Anderson</h3>
+                    <p class="card-role">Creative Director</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ccircle cx='150' cy='150' r='150' fill='%234c68d7'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='80' fill='%23fff'%3EMC%3C/text%3E%3C/svg%3E" alt="Michael Chen">
+                        <div class="social-overlay">
+                            <a href="#" aria-label="Twitter" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="card-name">Michael Chen</h3>
+                    <p class="card-role">Lead Developer</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ccircle cx='150' cy='150' r='150' fill='%23fd5949'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='80' fill='%23fff'%3EEJ%3C/text%3E%3C/svg%3E" alt="Emily Johnson">
+                        <div class="social-overlay">
+                            <a href="#" aria-label="Twitter" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="card-name">Emily Johnson</h3>
+                    <p class="card-role">UX Designer</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ccircle cx='150' cy='150' r='150' fill='%23feda75'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='80' fill='%23fff'%3EDP%3C/text%3E%3C/svg%3E" alt="David Park">
+                        <div class="social-overlay">
+                            <a href="#" aria-label="Twitter" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="card-name">David Park</h3>
+                    <p class="card-role">Product Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <a href="#">Meta</a>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Jobs</a>
+                <a href="#">Help</a>
+                <a href="#">API</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Locations</a>
+                <a href="#">Instagram Lite</a>
+                <a href="#">Contact Uploading & Non-Users</a>
+            </nav>
+            <div class="footer-bottom">
+                <select class="language-select">
+                    <option>English</option>
+                    <option>Español</option>
+                    <option>Français</option>
+                </select>
+                <p>© 2024 Instagram Clone</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Form elements
+    const loginForm = document.getElementById('loginForm');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginBtn = document.getElementById('loginBtn');
+    const togglePasswordBtn = document.querySelector('.toggle-password');
+    
+    // Floating label functionality
+    function handleFloatingLabels() {
+        const inputs = document.querySelectorAll('.input-group input');
+        
+        inputs.forEach(input => {
+            // Add filled class on input
+            input.addEventListener('input', function() {
+                if (this.value.length > 0) {
+                    this.classList.add('filled');
+                } else {
+                    this.classList.remove('filled');
+                }
+                validateForm();
+            });
+            
+            // Handle autofill
+            input.addEventListener('animationstart', function(e) {
+                if (e.animationName === 'onAutoFillStart') {
+                    this.classList.add('filled');
+                }
+            });
+            
+            // Check initial state
+            if (input.value.length > 0) {
+                input.classList.add('filled');
+            }
+        });
+    }
+    
+    // Password toggle functionality
+    if (togglePasswordBtn) {
+        togglePasswordBtn.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? 'Show' : 'Hide';
+        });
+    }
+    
+    // Form validation
+    function validateForm() {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+        
+        // Enable/disable login button
+        if (username.length > 0 && password.length >= 6) {
+            loginBtn.disabled = false;
+        } else {
+            loginBtn.disabled = true;
+        }
+    }
+    
+    // Email validation
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    // Phone validation (basic)
+    function isValidPhone(phone) {
+        const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+        return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 10;
+    }
+    
+    // Username validation
+    function validateUsername(username) {
+        // Check if it's email, phone, or username
+        if (username.includes('@')) {
+            return isValidEmail(username);
+        } else if (/^\d/.test(username)) {
+            return isValidPhone(username);
+        } else {
+            return username.length >= 3;
+        }
+    }
+    
+    // Show error message
+    function showError(input, message) {
+        input.classList.add('error');
+        
+        // Create or update error message
+        let errorDiv = input.parentElement.querySelector('.error-message');
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            input.parentElement.appendChild(errorDiv);
+        }
+        errorDiv.textContent = message;
+        errorDiv.classList.add('show');
+    }
+    
+    // Clear error message
+    function clearError(input) {
+        input.classList.remove('error');
+        const errorDiv = input.parentElement.querySelector('.error-message');
+        if (errorDiv) {
+            errorDiv.classList.remove('show');
+        }
+    }
+    
+    // Input focus events
+    usernameInput.addEventListener('focus', function() {
+        clearError(this);
+    });
+    
+    passwordInput.addEventListener('focus', function() {
+        clearError(this);
+    });
+    
+    // Form submission
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Validate username
+            const username = usernameInput.value.trim();
+            if (username === '') {
+                showError(usernameInput, 'Please enter your username, email, or phone number.');
+                isValid = false;
+            } else if (!validateUsername(username)) {
+                showError(usernameInput, 'Please enter a valid username, email, or phone number.');
+                isValid = false;
+            } else {
+                clearError(usernameInput);
+            }
+            
+            // Validate password
+            const password = passwordInput.value.trim();
+            if (password === '') {
+                showError(passwordInput, 'Please enter your password.');
+                isValid = false;
+            } else if (password.length < 6) {
+                showError(passwordInput, 'Password must be at least 6 characters.');
+                isValid = false;
+            } else {
+                clearError(passwordInput);
+            }
+            
+            // If form is valid, simulate login
+            if (isValid) {
+                // Add loading state
+                loginBtn.classList.add('loading');
+                loginBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(function() {
+                    loginBtn.classList.remove('loading');
+                    loginBtn.disabled = false;
+                    
+                    // Show success message (in real app, redirect to dashboard)
+                    alert('Login functionality would work here!\n\nUsername: ' + username + '\nPassword: ' + password);
+                    
+                    // Reset form
+                    loginForm.reset();
+                    usernameInput.classList.remove('filled');
+                    passwordInput.classList.remove('filled');
+                    validateForm();
+                }, 1500);
+            }
+        });
+    }
+    
+    // Smooth scroll for team section
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '#signup') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Social links animation
+    const teamCards = document.querySelectorAll('.team-card');
+    teamCards.forEach(card => {
+        const socialOverlay = card.querySelector('.social-overlay');
+        const socialLinks = card.querySelectorAll('.social-link');
+        
+        if (socialOverlay) {
+            card.addEventListener('mouseenter', function() {
+                socialLinks.forEach((link, index) => {
+                    link.style.animationDelay = (index * 0.1) + 's';
+                    link.style.animation = 'fadeInUp 0.3s ease forwards';
+                });
+            });
+        }
+    });
+    
+    // Add CSS animation for social links
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Autofill detection */
+        @keyframes onAutoFillStart {
+            from { /*  */ }
+            to { /*  */ }
+        }
+        
+        input:-webkit-autofill {
+            animation-name: onAutoFillStart;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Initialize floating labels
+    handleFloatingLabels();
+    
+    // Initial form validation
+    validateForm();
+    
+    // Accessibility: Add ARIA live region for form errors
+    const ariaLive = document.createElement('div');
+    ariaLive.setAttribute('role', 'status');
+    ariaLive.setAttribute('aria-live', 'polite');
+    ariaLive.className = 'sr-only';
+    ariaLive.style.position = 'absolute';
+    ariaLive.style.left = '-10000px';
+    ariaLive.style.width = '1px';
+    ariaLive.style.height = '1px';
+    ariaLive.style.overflow = 'hidden';
+    document.body.appendChild(ariaLive);
+    
+    // Handle keyboard navigation for team cards
+    teamCards.forEach(card => {
+        const socialLinks = card.querySelectorAll('.social-link');
+        socialLinks.forEach(link => {
+            link.addEventListener('focus', function() {
+                card.querySelector('.social-overlay').style.opacity = '1';
+            });
+            
+            link.addEventListener('blur', function(e) {
+                if (!card.contains(e.relatedTarget)) {
+                    card.querySelector('.social-overlay').style.opacity = '0';
+                }
+            });
+        });
+    });
+    
+    // Prevent default on social links (since they're demo)
+    document.querySelectorAll('.social-link, .fb-login, .app-store, .google-play').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Link clicked:', this.getAttribute('aria-label') || this.textContent);
+        });
+    });
+    
+    // Console welcome message
+    console.log('%c Instagram Clone ', 'background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; font-size: 20px; padding: 10px; border-radius: 5px;');
+    console.log('✓ Form validation active');
+    console.log('✓ Floating labels working');
+    console.log('✓ Password toggle enabled');
+    console.log('✓ Social overlay animations ready');
+    console.log('✓ Responsive design loaded');
+});</script>
+</body>
+</html>

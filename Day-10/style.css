@@ -1,0 +1,583 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    color: #262626;
+    line-height: 1.5;
+}
+
+/* Login Section */
+.login-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-width: 935px;
+    width: 100%;
+}
+
+/* Phone Mockup */
+.phone-mockup {
+    display: none;
+}
+
+@media (min-width: 876px) {
+    .phone-mockup {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .phone-screen {
+        width: 454px;
+        height: 618px;
+        background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 454 618"%3E%3Crect fill="%23000" width="454" height="618" rx="30"/%3E%3C/svg%3E') no-repeat center;
+        background-size: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .phone-screen img {
+        width: 100%;
+        max-width: 250px;
+        border-radius: 8px;
+    }
+}
+
+/* Form Container */
+.login-forms {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.form-box {
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    padding: 40px;
+    text-align: center;
+}
+
+.signup-box {
+    padding: 24px 40px;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Billabong', cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    font-size: 51px;
+    font-weight: 400;
+    margin-bottom: 32px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 9px 8px 7px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #a8a8a8;
+    background-color: #ffffff;
+}
+
+.input-group input.error {
+    border-color: #ed4956;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group input.filled + label {
+    transform: translateY(-10px) scale(0.833);
+    color: #8e8e8e;
+}
+
+.input-group label {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #8e8e8e;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    transform-origin: left center;
+}
+
+/* Password Toggle */
+.toggle-password {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #262626;
+    cursor: pointer;
+    padding: 0;
+    display: none;
+}
+
+.input-group input:not(:placeholder-shown) ~ .toggle-password,
+.input-group input.filled ~ .toggle-password {
+    display: block;
+}
+
+.toggle-password:hover {
+    color: #000000;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 7px 16px;
+    background-color: #0095f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #1877f2;
+}
+
+.btn-primary:active {
+    opacity: 0.7;
+}
+
+.btn-primary:disabled {
+    background-color: #4cb5f9;
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 18px 0;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+}
+
+.divider span {
+    padding: 0 18px;
+}
+
+/* Facebook Login */
+.fb-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #385185;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 18px;
+}
+
+.fb-login:hover {
+    color: #00376b;
+}
+
+/* Forgot Password */
+.forgot-password {
+    color: #00376b;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #003c75;
+}
+
+/* Signup Box */
+.signup-box p {
+    font-size: 14px;
+    color: #262626;
+}
+
+.signup-box a {
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-box a:hover {
+    color: #00376b;
+}
+
+/* Get App Section */
+.get-app {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.get-app p {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.app-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.app-buttons img {
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Team Section */
+.team-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #262626;
+}
+
+.team-subtitle {
+    font-size: 16px;
+    text-align: center;
+    color: #8e8e8e;
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Team Cards */
+.team-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+}
+
+.card-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #dbdbdb;
+    transition: border-color 0.3s ease;
+}
+
+.team-card:hover .card-image {
+    border-color: #e1306c;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Social Overlay */
+.social-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-image:hover .social-overlay {
+    opacity: 1;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: #ffffff;
+    color: #262626;
+    transform: scale(1.1);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Card Text */
+.card-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 6px;
+}
+
+.card-role {
+    font-size: 14px;
+    color: #8e8e8e;
+}
+
+/* Footer */
+.footer {
+    background-color: #fafafa;
+    padding: 40px 20px 20px;
+    border-top: 1px solid #dbdbdb;
+}
+
+.footer-content {
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-nav a {
+    color: #8e8e8e;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.language-select {
+    background-color: transparent;
+    border: 1px solid #dbdbdb;
+    color: #8e8e8e;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.footer-bottom p {
+    color: #8e8e8e;
+    font-size: 12px;
+}
+
+/* Error Messages */
+.error-message {
+    color: #ed4956;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 4px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 875px) {
+    .login-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .form-box {
+        padding: 40px 20px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .signup-box {
+        padding: 24px 20px;
+        border: 1px solid #dbdbdb;
+        background-color: #ffffff;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .team-title {
+        font-size: 28px;
+    }
+
+    .footer-nav {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .card-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .social-overlay {
+        gap: 12px;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-box {
+    animation: fadeIn 0.4s ease;
+}
+
+.team-card {
+    animation: fadeIn 0.6s ease backwards;
+}
+
+.team-card:nth-child(1) { animation-delay: 0.1s; }
+.team-card:nth-child(2) { animation-delay: 0.2s; }
+.team-card:nth-child(3) { animation-delay: 0.3s; }
+.team-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #0095f6;
+    outline-offset: 2px;
+}
+
+/* Loading State */
+.btn-primary.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn-primary.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
