@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Foundation - JavaScript Basics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Logic Foundation</h1>
+            <p class="subtitle">JavaScript Variables, Math & Type Inspection</p>
+        </header>
+
+        <!-- Variables & Math Section -->
+        <section class="card">
+            <h2>📊 Variables & Math Operations</h2>
+            <div class="input-group">
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1" value="15">
+            </div>
+            <div class="input-group">
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2" value="4">
+            </div>
+            <button onclick="calculateMath()" class="btn-primary">Calculate</button>
+            
+            <div id="mathResults" class="results"></div>
+        </section>
+
+        <!-- String Concatenation Section -->
+        <section class="card">
+            <h2>✍️ String Concatenation</h2>
+            <div class="input-group">
+                <label for="userName">Your Name:</label>
+                <input type="text" id="userName" placeholder="Enter your name">
+            </div>
+            <button onclick="createWelcome()" class="btn-primary">Generate Welcome</button>
+            
+            <div id="welcomeResults" class="results"></div>
+        </section>
+
+        <!-- Magic 8-Ball Section -->
+        <section class="card magic-ball">
+            <h2>🎱 Magic 8-Ball</h2>
+            <div class="input-group">
+                <label for="question">Ask a Question:</label>
+                <input type="text" id="question" placeholder="Will I master JavaScript?">
+            </div>
+            <button onclick="shakeMagicBall()" class="btn-magic">Shake the Ball</button>
+            
+            <div id="magicAnswer" class="magic-answer"></div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="card">
+            <h2>🔢 Calculator</h2>
+            <div class="calculator-grid">
+                <div class="input-group">
+                    <label for="calcNum1">Number 1:</label>
+                    <input type="number" id="calcNum1" value="20">
+                </div>
+                <div class="input-group">
+                    <label for="calcNum2">Number 2:</label>
+                    <input type="number" id="calcNum2" value="5">
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="calculate('add')" class="btn-calc">+</button>
+                <button onclick="calculate('subtract')" class="btn-calc">-</button>
+                <button onclick="calculate('multiply')" class="btn-calc">×</button>
+                <button onclick="calculate('divide')" class="btn-calc">÷</button>
+                <button onclick="calculate('modulo')" class="btn-calc">%</button>
+            </div>
+            
+            <div id="calcResult" class="calc-display"></div>
+        </section>
+
+        <!-- Type Inspector Section -->
+        <section class="card">
+            <h2>🔍 Type Inspector</h2>
+            <div class="input-group">
+                <label for="testValue">Test Value:</label>
+                <input type="text" id="testValue" placeholder='Try: 42, "hello", true, [1,2,3]'>
+            </div>
+            <button onclick="inspectType()" class="btn-primary">Inspect Type</button>
+            
+            <div id="typeResults" class="results"></div>
+        </section>
+
+        <!-- Console Output Section -->
+        <section class="card console-section">
+            <h2>💻 Console Output</h2>
+            <button onclick="clearConsole()" class="btn-secondary">Clear Console</button>
+            <div id="console" class="console-output"></div>
+        </section>
+
+        <footer>
+            <p>✅ Built with HTML, CSS & JavaScript | Learning Objectives Complete!</p>
+        </footer>
+    </div>
+
+    <script src="logic-foundation.js"></script>
+    <script>// ==========================================
+// SIMPLE CALCULATOR UTILITY
+// ==========================================
+
+console.log("🔢 Calculator Utility\n");
+
+// ==========================================
+// Calculator Functions
+// ==========================================
+
+// Basic arithmetic operations
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    return "Error: Cannot divide by zero!";
+  }
+  return a / b;
+}
+
+function modulo(a, b) {
+  return a % b;
+}
+
+// ==========================================
+// Sample Calculations
+// ==========================================
+
+const x = 20;
+const y = 5;
+
+console.log(`Numbers: x = ${x}, y = ${y}\n`);
+
+console.log("Basic Operations:");
+console.log(`${x} + ${y} = ${add(x, y)}`);
+console.log(`${x} - ${y} = ${subtract(x, y)}`);
+console.log(`${x} × ${y} = ${multiply(x, y)}`);
+console.log(`${x} ÷ ${y} = ${divide(x, y)}`);
+console.log(`${x} % ${y} = ${modulo(x, y)}\n`);
+
+// Test division by zero
+console.log("Testing edge cases:");
+console.log(`${x} ÷ 0 = ${divide(x, 0)}\n`);
+
+// ==========================================
+// Type Information Display
+// ==========================================
+
+console.log("Type Information:");
+
+const testValues = {
+  number: 42,
+  string: "Hello",
+  boolean: true,
+  array: [1, 2, 3],
+  object: { name: "Test" },
+  undefined: undefined,
+  null: null
+};
+
+for (let key in testValues) {
+  const value = testValues[key];
+  console.log(`${key}: ${value} → typeof: ${typeof value}`);
+}
+
+console.log("\n✅ Calculator utility complete!");</script>
+    <script>// ==========================================
+// APP.JS - Interactive Logic Foundation
+// ==========================================
+
+// Console logging override to display in custom console
+const consoleOutput = [];
+
+function logToConsole(message, type = 'log') {
+    const consoleDiv = document.getElementById('console');
+    if (!consoleDiv) return;
+    
+    const logEntry = document.createElement('div');
+    logEntry.className = type;
+    logEntry.textContent = `> ${message}`;
+    consoleDiv.appendChild(logEntry);
+    consoleDiv.scrollTop = consoleDiv.scrollHeight;
+}
+
+function clearConsole() {
+    const consoleDiv = document.getElementById('console');
+    if (consoleDiv) {
+        consoleDiv.innerHTML = '';
+        logToConsole('Console cleared', 'log');
+    }
+}
+
+// ==========================================
+// MATH OPERATIONS
+// ==========================================
+
+function calculateMath() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        alert('Please enter valid numbers!');
+        return;
+    }
+    
+    const sum = num1 + num2;
+    const product = num1 * num2;
+    const remainder = num1 % num2;
+    
+    const resultsDiv = document.getElementById('mathResults');
+    resultsDiv.innerHTML = `
+        <p><strong>Sum:</strong> ${num1} + ${num2} = <span style="color: #10b981;">${sum}</span></p>
+        <p><strong>Product:</strong> ${num1} × ${num2} = <span style="color: #10b981;">${product}</span></p>
+        <p><strong>Remainder:</strong> ${num1} % ${num2} = <span style="color: #10b981;">${remainder}</span></p>
+        <p style="margin-top: 10px; color: #94a3b8;">
+            <strong>Type Check:</strong> typeof sum = ${typeof sum}
+        </p>
+    `;
+    
+    logToConsole(`Math calculation: ${num1} + ${num2} = ${sum}`, 'success');
+    logToConsole(`Product: ${num1} × ${num2} = ${product}`, 'success');
+}
+
+// ==========================================
+// STRING CONCATENATION
+// ==========================================
+
+function createWelcome() {
+    const userName = document.getElementById('userName').value;
+    
+    if (!userName.trim()) {
+        alert('Please enter your name!');
+        return;
+    }
+    
+    // Using both concatenation methods
+    const welcome1 = "Welcome, " + userName + "! Let's learn JavaScript together.";
+    const welcome2 = `Hello ${userName}, great to see you here!`;
+    
+    const resultsDiv = document.getElementById('welcomeResults');
+    resultsDiv.innerHTML = `
+        <p><strong>Method 1 (Concatenation):</strong></p>
+        <p>"Welcome, " + userName + "! Let's learn..."</p>
+        <p style="color: #10b981; margin-bottom: 15px;">${welcome1}</p>
+        
+        <p><strong>Method 2 (Template Literal):</strong></p>
+        <p>\`Hello \${userName}, great to see you!\`</p>
+        <p style="color: #10b981; margin-bottom: 15px;">${welcome2}</p>
+        
+        <p style="color: #94a3b8;">
+            <strong>Type Check:</strong> typeof welcome1 = ${typeof welcome1}
+        </p>
+    `;
+    
+    logToConsole(`Welcome message created for: ${userName}`, 'success');
+}
+
+// ==========================================
+// MAGIC 8-BALL
+// ==========================================
+
+function shakeMagicBall() {
+    const question = document.getElementById('question').value;
+    
+    if (!question.trim()) {
+        alert('Please ask a question first!');
+        return;
+    }
+    
+    const responses = [
+        "Yes, definitely! ✨",
+        "It is certain. 🎯",
+        "Reply hazy, try again. 🌫️",
+        "Cannot predict now. ⏰",
+        "Don't count on it. ⛔",
+        "My sources say no. ❌",
+        "Outlook good! 👍",
+        "Better not tell you now. 🤐",
+        "Signs point to yes. ✅",
+        "Very doubtful. 🤔"
+    ];
+    
+    // Animate the ball
+    const answerDiv = document.getElementById('magicAnswer');
+    answerDiv.style.opacity = '0';
+    answerDiv.style.transform = 'rotate(0deg)';
+    
+    setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * responses.length);
+        const answer = responses[randomIndex];
+        
+        answerDiv.innerHTML = answer;
+        answerDiv.style.opacity = '1';
+        answerDiv.style.transform = 'rotate(360deg)';
+        answerDiv.style.transition = 'all 0.6s ease';
+        
+        logToConsole(`Magic 8-Ball: "${question}" → ${answer}`, 'log');
+    }, 300);
+}
+
+// ==========================================
+// CALCULATOR FUNCTIONS
+// ==========================================
+
+function calculate(operation) {
+    const num1 = parseFloat(document.getElementById('calcNum1').value);
+    const num2 = parseFloat(document.getElementById('calcNum2').value);
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        alert('Please enter valid numbers!');
+        return;
+    }
+    
+    let result;
+    let operator;
+    
+    switch(operation) {
+        case 'add':
+            result = num1 + num2;
+            operator = '+';
+            break;
+        case 'subtract':
+            result = num1 - num2;
+            operator = '-';
+            break;
+        case 'multiply':
+            result = num1 * num2;
+            operator = '×';
+            break;
+        case 'divide':
+            if (num2 === 0) {
+                result = 'Error: Cannot divide by zero!';
+                operator = '÷';
+            } else {
+                result = num1 / num2;
+                operator = '÷';
+            }
+            break;
+        case 'modulo':
+            result = num1 % num2;
+            operator = '%';
+            break;
+    }
+    
+    const resultDiv = document.getElementById('calcResult');
+    resultDiv.innerHTML = `${num1} ${operator} ${num2} = ${result}`;
+    
+    logToConsole(`Calculator: ${num1} ${operator} ${num2} = ${result}`, 'success');
+}
+
+// ==========================================
+// TYPE INSPECTOR
+// ==========================================
+
+function inspectType() {
+    const input = document.getElementById('testValue').value;
+    
+    if (!input.trim()) {
+        alert('Please enter a value to inspect!');
+        return;
+    }
+    
+    let value;
+    let interpretedAs = 'string';
+    
+    // Try to parse the input
+    try {
+        // Check if it's a number
+        if (!isNaN(input) && input.trim() !== '') {
+            value = parseFloat(input);
+            interpretedAs = 'number';
+        }
+        // Check if it's a boolean
+        else if (input === 'true' || input === 'false') {
+            value = input === 'true';
+            interpretedAs = 'boolean';
+        }
+        // Check if it's an array or object
+        else if (input.startsWith('[') || input.startsWith('{')) {
+            value = JSON.parse(input);
+            interpretedAs = Array.isArray(value) ? 'array' : 'object';
+        }
+        // Otherwise it's a string
+        else {
+            value = input;
+            interpretedAs = 'string';
+        }
+    } catch (e) {
+        value = input;
+        interpretedAs = 'string (parse error)';
+    }
+    
+    const actualType = typeof value;
+    
+    const resultsDiv = document.getElementById('typeResults');
+    resultsDiv.innerHTML = `
+        <p><strong>Input:</strong> ${input}</p>
+        <p><strong>Interpreted As:</strong> ${interpretedAs}</p>
+        <p><strong>Actual Type:</strong> <span style="color: #10b981;">${actualType}</span></p>
+        <p><strong>Value:</strong> ${JSON.stringify(value)}</p>
+        ${Array.isArray(value) ? '<p><strong>Note:</strong> Arrays show typeof "object" in JavaScript!</p>' : ''}
+    `;
+    
+    logToConsole(`Type inspection: "${input}" → ${actualType}`, 'log');
+}
+
+// ==========================================
+// INITIALIZATION
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    logToConsole('Logic Foundation App Loaded! 🎯', 'success');
+    logToConsole('All interactive features ready.', 'log');
+    
+    // Add enter key support for inputs
+    document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const button = this.parentElement.nextElementSibling;
+                if (button && button.tagName === 'BUTTON') {
+                    button.click();
+                }
+            }
+        });
+    });
+});
+
+// ==========================================
+// DEMO DATA (runs on load)
+// ==========================================
+
+window.addEventListener('load', function() {
+    // Log some demo type information
+    setTimeout(() => {
+        logToConsole('--- Demo Type Examples ---', 'log');
+        logToConsole(`typeof 42 = ${typeof 42}`, 'log');
+        logToConsole(`typeof "hello" = ${typeof "hello"}`, 'log');
+        logToConsole(`typeof true = ${typeof true}`, 'log');
+        logToConsole(`typeof [1,2,3] = ${typeof [1,2,3]}`, 'log');
+        logToConsole(`typeof {a: 1} = ${typeof {a: 1}}`, 'log');
+        logToConsole('--- Ready for your input! ---', 'log');
+    }, 500);
+});</script>
+</body>
+</html>
