@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Core v1.0 - Terminal OS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="header-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="header-title">VIRTUAL CORE TERMINAL v1.0</div>
+            <div class="header-status">
+                <span id="session-status">●</span>
+                <span id="status-text">INITIALIZING</span>
+            </div>
+        </div>
+        
+        <div class="terminal-body" id="terminal-output">
+            <div class="boot-sequence">
+                <pre class="ascii-art">
+██╗   ██╗██╗██████╗ ████████╗██╗   ██╗ █████╗ ██╗          ██████╗ ██████╗ ██████╗ ███████╗
+██║   ██║██║██╔══██╗╚══██╔══╝██║   ██║██╔══██╗██║         ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+██║   ██║██║██████╔╝   ██║   ██║   ██║███████║██║         ██║     ██║   ██║██████╔╝█████╗  
+╚██╗ ██╔╝██║██╔══██╗   ██║   ██║   ██║██╔══██║██║         ██║     ██║   ██║██╔══██╗██╔══╝  
+ ╚████╔╝ ██║██║  ██║   ██║   ╚██████╔╝██║  ██║███████╗    ╚██████╗╚██████╔╝██║  ██║███████╗
+  ╚═══╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+                </pre>
+                <p class="boot-text">
+                    <span class="loading-dots">System Boot Sequence Initiated</span><br>
+                    <span class="system-info">Kernel Version: 1.0.0-alpha</span><br>
+                    <span class="system-info">Memory: 1024MB Available</span><br>
+                    <span class="system-info">Security Protocol: ACTIVE</span><br>
+                    <br>
+                    <span class="warning-text">⚠ AUTHENTICATION REQUIRED ⚠</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="terminal-input-container">
+            <span class="prompt-symbol" id="prompt-text">[SYSTEM]></span>
+            <input type="text" id="terminal-input" class="terminal-input" placeholder="Enter Master PIN..." autocomplete="off" autofocus>
+        </div>
+        
+        <div class="terminal-footer">
+            <span id="footer-left">Attempts: <span id="attempts-left">3</span></span>
+            <span id="footer-center">Balance: $<span id="balance-display">----</span></span>
+            <span id="footer-right">Session: <span id="session-time">00:00</span></span>
+        </div>
+    </div>
+
+    <!-- Audio elements for effects (optional) -->
+    <audio id="beep-sound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTcIGWi77eefTRAMUKfj8LZjHAY4ktjyzXksBS" />
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
