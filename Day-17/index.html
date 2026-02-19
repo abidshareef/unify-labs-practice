@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Master Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Master Data Dashboard</h1>
+            <p>Processing Student Project Data with Filter, Map & Reduce</p>
+        </header>
+
+        <main>
+            <!-- Tasks Section -->
+            <section class="dashboard-section">
+                <h2>Project Tasks Status</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <h3>Total Tasks</h3>
+                        <div id="total-tasks" class="stat-value">0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Completed Tasks</h3>
+                        <div id="completed-tasks" class="stat-value">0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Tasks</h3>
+                        <div id="pending-tasks" class="stat-value">0</div>
+                    </div>
+                </div>
+                
+                <div class="data-display">
+                    <h3>Completed Projects</h3>
+                    <ul id="completed-list"></ul>
+                    
+                    <h3>Pending Projects</h3>
+                    <ul id="pending-list"></ul>
+                </div>
+            </section>
+
+            <!-- Budget Section -->
+            <section class="dashboard-section">
+                <h2>Budget Analysis</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <h3>Pre-tax Budget</h3>
+                        <div id="pre-tax-budget" class="stat-value">$0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Tax Amount (7%)</h3>
+                        <div id="tax-amount" class="stat-value">$0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Total Budget (with Tax)</h3>
+                        <div id="total-budget" class="stat-value">$0</div>
+                    </div>
+                </div>
+                
+                <div class="data-display">
+                    <h3>Projects with Tax Applied</h3>
+                    <ul id="projects-with-tax"></ul>
+                </div>
+            </section>
+
+            <!-- Raw Data Section -->
+            <section class="dashboard-section">
+                <h2>Raw Data Sample</h2>
+                <div class="raw-data-container">
+                    <pre id="raw-data"></pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Data Management Dashboard | Filter • Map • Reduce</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
