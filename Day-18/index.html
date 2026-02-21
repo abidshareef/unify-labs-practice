@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Pet Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 Digital Pet Simulator 🐾</h1>
+        
+        <div class="pet-info">
+            <p id="pet-name">Name: Buddy</p>
+            <p id="pet-type">Type: Dog</p>
+        </div>
+        
+        <div class="pet-container">
+            <div class="pet-display">
+                <div class="pet-face" id="pet-face">🐶</div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-bar health-bar">
+                <div class="stat-label">
+                    <span>Health</span>
+                    <span id="health-value">100%</span>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-fill" id="health-bar" style="width: 100%"></div>
+                </div>
+            </div>
+            
+            <div class="stat-bar energy-bar">
+                <div class="stat-label">
+                    <span>Energy</span>
+                    <span id="energy-value">100%</span>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-fill" id="energy-bar" style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="feed-btn">🍖 Feed</button>
+            <button id="play-btn">⚽ Play</button>
+            <button id="rest-btn">💤 Rest</button>
+            <button id="status-btn">📊 Status</button>
+        </div>
+        
+        <div class="status" id="status-message">
+            Your pet is happy and healthy!
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
