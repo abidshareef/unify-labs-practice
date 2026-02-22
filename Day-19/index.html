@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Task Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced Task Dashboard</h1>
+            <p>Manage your tasks efficiently</p>
+        </header>
+        
+        <div class="dashboard">
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Enter a new task..." autocomplete="off">
+                    <select id="priority-select">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <button id="add-task-btn">Add Task</button>
+                </div>
+                
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All Tasks</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <div class="stat-card">
+                    <h3>Total Tasks</h3>
+                    <span id="total-count">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed</h3>
+                    <span id="completed-count">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending</h3>
+                    <span id="pending-count">0</span>
+                </div>
+            </div>
+            
+            <div class="tasks-container">
+                <ul id="task-list" class="task-list"></ul>
+            </div>
+            
+            <div class="actions-section">
+                <button id="clear-completed-btn">Clear Completed</button>
+                <button id="save-tasks-btn">Save Tasks</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
