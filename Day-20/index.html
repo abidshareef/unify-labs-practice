@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Weather Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1><i class="fas fa-cloud-sun"></i> Weather Dashboard</h1>
+    </header>
+
+    <div class="search-box">
+        <input id="cityInput" placeholder="Enter city name">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <div class="dashboard" id="dashboard">
+        <div class="card current">
+            <h2 id="location">---</h2>
+            <i id="icon" class="fas fa-sun"></i>
+            <div class="temp" id="temp">--°C</div>
+            <p id="desc">---</p>
+
+            <div class="details">
+                <div class="detail">Feels Like: <b id="feels">--°C</b></div>
+                <div class="detail">Humidity: <b id="humidity">--%</b></div>
+                <div class="detail">Wind: <b id="wind">-- km/h</b></div>
+                <div class="detail">Pressure: <b id="pressure">-- hPa</b></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="forecast-title">5-Day Forecast</h3>
+            <div class="forecast-cards" id="forecast"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
