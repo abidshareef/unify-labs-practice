@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Zenith</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ── Masthead ───────────────────────────────────────── -->
+    <header class="masthead">
+        <div class="masthead-top">
+            <div class="masthead-meta">
+                <span id="date-display"></span>
+                <span class="sep">·</span>
+                <span id="post-count-label">Loading…</span>
+            </div>
+            <button class="btn-new" id="openModal">
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                New Post
+            </button>
+        </div>
+        <div class="masthead-center">
+            <div class="masthead-rule"></div>
+            <h1 class="brand">PROJECT <em>Zenith</em></h1>
+            <div class="masthead-rule"></div>
+        </div>
+        <div class="masthead-bottom">
+            <nav class="tag-nav" id="tag-nav">
+                <button class="tag-pill active" data-tag="all">All Topics</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ── Main ───────────────────────────────────────────── -->
+    <main class="site-main">
+        <section class="featured-section" id="featured-section"></section>
+
+        <div class="section-divider">
+            <div class="rule"></div>
+            <span class="section-label">Latest Stories</span>
+            <div class="rule"></div>
+        </div>
+
+        <section class="grid-section" id="blog-container">
+            <div class="skeleton-wrap">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── Empty State ────────────────────────────────────── -->
+    <div class="empty-state hidden" id="empty-state">
+        <div class="empty-ornament">✦</div>
+        <h2>No stories yet</h2>
+        <p>The page is blank. Write something worth reading.</p>
+        <button class="btn-new" onclick="document.getElementById('openModal').click()">Begin Writing</button>
+    </div>
+
+    <!-- ── Footer ─────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="footer-rule"></div>
+        <p>Project Zenith &nbsp;·&nbsp; Full-Stack CMS &nbsp;·&nbsp; Built with Express &amp; MongoDB</p>
+    </footer>
+
+    <!-- ── Modal ──────────────────────────────────────────── -->
+    <div class="modal-overlay hidden" id="modal">
+        <div class="modal-box">
+            <div class="modal-head">
+                <div>
+                    <p class="modal-eyebrow">Compose</p>
+                    <h2 class="modal-headline" id="modal-title">New Story</h2>
+                </div>
+                <button class="modal-close" id="closeModal">✕</button>
+            </div>
+            <div class="modal-form">
+                <input type="hidden" id="edit-id" />
+                <div class="form-row">
+                    <div class="field">
+                        <label for="field-author">Author</label>
+                        <input type="text" id="field-author" placeholder="Your name" autocomplete="off" />
+                    </div>
+                    <div class="field">
+                        <label for="field-tag">Section</label>
+                        <select id="field-tag">
+                            <option value="General">General</option>
+                            <option value="Tech">Tech</option>
+                            <option value="Design">Design</option>
+                            <option value="Culture">Culture</option>
+                            <option value="Science">Science</option>
+                            <option value="Opinion">Opinion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="field-title">Headline</label>
+                    <input type="text" id="field-title" placeholder="Write a compelling headline…" autocomplete="off" />
+                </div>
+                <div class="field">
+                    <label for="field-content">Story</label>
+                    <textarea id="field-content" rows="8" placeholder="Tell your story…"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-ghost" id="cancelModal">Discard</button>
+                    <button class="btn-publish" id="submitPost">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Toast ──────────────────────────────────────────── -->
+    <div class="toast hidden" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
