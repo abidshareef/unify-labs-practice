@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NoSQL Foundation — MongoDB Setup</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- ── SCANLINE OVERLAY ── -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="header-top">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>MongoDB · Local Instance</span>
+      </div>
+      <div class="header-meta">
+        <span>PORT&nbsp;27017</span>
+        <span class="sep">|</span>
+        <span>BEGINNER</span>
+        <span class="sep">|</span>
+        <span id="clock">--:--:--</span>
+      </div>
+    </div>
+
+    <div class="header-body">
+      <div class="header-label">NoSQL Foundation</div>
+      <h1>Database<br/><span class="accent">Groundwork</span></h1>
+      <p class="header-sub">Install MongoDB, verify your connection, and create your first visual database using Compass.</p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-label" id="progressLabel">0 / 7 steps complete</span>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main>
+
+    <!-- ── LEARNING OBJECTIVES ── -->
+    <section class="objectives-section">
+      <div class="section-tag">Learning Objectives</div>
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <span class="obj-icon">⬡</span>
+          <span>Install MongoDB Community Server &amp; Compass</span>
+        </div>
+        <div class="obj-card">
+          <span class="obj-icon">⬡</span>
+          <span>Establish a connection via local port 27017</span>
+        </div>
+        <div class="obj-card">
+          <span class="obj-icon">⬡</span>
+          <span>Create database <code>unify_labs</code> &amp; collection <code>interns</code></span>
+        </div>
+        <div class="obj-card">
+          <span class="obj-icon">⬡</span>
+          <span>Insert 3 sample documents via GUI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider-label">// ENVIRONMENT SETUP</div>
+
+    <!-- STEP 1 -->
+    <div class="step-card" data-step="1">
+      <div class="step-header">
+        <div class="step-number">01</div>
+        <div class="step-info">
+          <h2>Download MongoDB MSI Installer</h2>
+          <p>Get the official Community Server installer for Windows.</p>
+        </div>
+        <button class="check-btn" onclick="toggleStep(1)" aria-label="Mark step complete">
+          <span class="check-icon">✓</span>
+        </button>
+      </div>
+      <div class="step-body">
+        <div class="instruction-list">
+          <div class="instruction">
+            <span class="num">1</span>
+            <span>Go to <strong>mongodb.com/try/download/community</strong></span>
+          </div>
+          <div class="instruction">
+            <span class="num">2</span>
+            <span>Select <strong>Windows</strong> platform, <strong>MSI</strong> package, latest version</span>
+          </div>
+          <div class="instruction">
+            <span class="num">3</span>
+            <span>Click <strong>Download</strong> — file will be named <code>mongodb-windows-x86_64-X.X.X.msi</code></span>
+          </div>
+        </div>
+        <div class="tip-box">
+          <span class="tip-label">TIP</span>
+          Also check <strong>"Install MongoDB Compass"</strong> during setup — it comes bundled with the MSI installer.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step-card" data-step="2">
+      <div class="step-header">
+        <div class="step-number">02</div>
+        <div class="step-info">
+          <h2>Run the MSI Installer</h2>
+          <p>Install MongoDB as a Windows Service so it runs automatically.</p>
+        </div>
+        <button class="check-btn" onclick="toggleStep(2)" aria-label="Mark step complete">
+          <span class="check-icon">✓</span>
+        </button>
+      </div>
+      <div class="step-body">
+        <div class="instruction-list">
+          <div class="instruction">
+            <span class="num">1</span>
+            <span>Double-click the downloaded <code>.msi</code> file and click <strong>Next</strong></span>
+          </div>
+          <div class="instruction">
+            <span class="num">2</span>
+            <span>Accept the license agreement, choose <strong>Complete</strong> setup type</span>
+          </div>
+          <div class="instruction">
+            <span class="num">3</span>
+            <span>On the Service Configuration screen, leave defaults — <strong>Install MongoD as a Service</strong> should be checked</span>
+          </div>
+          <div class="instruction">
+            <span class="num">4</span>
+            <span>Ensure <strong>Install MongoDB Compass</strong> is checked, then click <strong>Install</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step-card" data-step="3">
+      <div class="step-header">
+        <div class="step-number">03</div>
+        <div class="step-info">
+          <h2>Verify Installation in Terminal</h2>
+          <p>Confirm MongoDB shell is accessible from your command line.</p>
+        </div>
+        <button class="check-btn" onclick="toggleStep(3)" aria-label="Mark step complete">
+          <span class="check-icon">✓</span>
+        </button>
+      </div>
+      <div class="step-body">
+        <p class="step-desc">Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
+
+        <div class="code-block" id="cmd-version">
+          <div class="code-header">
+            <span class="code-lang">TERMINAL</span>
+            <button class="copy-btn" onclick="copyCode('cmd-version')">copy</button>
+          </div>
+          <pre><code>mongosh --version</code></pre>
+        </div>
+
+        <div class="terminal-output">
+          <div class="terminal-bar">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="t-title">Expected Output</span>
+          </div>
+          <div class="terminal-body">
+            <span class="prompt">C:\Users\you&gt;</span> mongosh --version<br/>
+            <span class="t-success">2.x.x</span>
+          </div>
+        </div>
+
+        <div class="tip-box warn">
+          <span class="tip-label">NOTE</span>
+          If the command is not recognized, add MongoDB's <code>bin</code> folder to your system PATH:<br/>
+          <code>C:\Program Files\MongoDB\Server\X.X\bin</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider-label">// COMPASS CONNECTION</div>
+
+    <!-- STEP 4 -->
+    <div class="step-card" data-step="4">
+      <div class="step-header">
+        <div class="step-number">04</div>
+        <div class="step-info">
+          <h2>Connect via MongoDB Compass</h2>
+          <p>Use the GUI to establish a local connection on port 27017.</p>
+        </div>
+        <button class="check-btn" onclick="toggleStep(4)" aria-label="Mark step complete">
+          <span class="check-icon">✓</span>
+        </button>
+      </div>
+      <div class="step-body">
+        <div class="instruction-list">
+          <div class="instruction">
+            <span class="num">1</span>
+            <span>Launch <strong>MongoDB Compass</strong> from the Start Menu</span>
+          </div>
+          <div class="instruction">
+            <span class="num">2</span>
+            <span>In the connection string field, enter the URI below and click <strong>Connect</strong></span>
+          </div>
+        </div>
+
+        <div class="code-block" id="cmd-uri">
+          <div class="code-header">
+            <span class="code-lang">CONNECTION URI</span>
+            <button class="copy-btn" onclick="copyCode('cmd-uri')">copy</button>
+          </div>
+          <pre><code>mongodb://localhost:27017</code></pre>
+        </div>
+
+        <div class="connection-visual">
+          <div class="conn-node">
+            <div class="conn-icon">💻</div>
+            <div class="conn-label">Your Machine</div>
+          </div>
+          <div class="conn-line">
+            <span class="conn-port">:27017</span>
+            <div class="conn-arrow">
+              <div class="arrow-line"></div>
+              <div class="arrow-head"></div>
+            </div>
+          </div>
+          <div class="conn-node">
+            <div class="conn-icon">🍃</div>
+            <div class="conn-label">mongod Service</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider-label">// DATA CREATION</div>
+
+    <!-- STEP 5 -->
+    <div class="step-card" data-step="5">
+      <div class="step-header">
+        <div class="step-number">05</div>
+        <div class="step-info">
+          <h2>Create Database &amp; Collection</h2>
+          <p>Set up <code>unify_labs</code> database with an <code>interns</code> collection.</p>
+        </div>
+        <button class="check-btn" onclick="toggleStep(5)" aria-label="Mark step complete">
+          <span class="check-icon">✓</span>
+        </button>
+      </div>
+      <div class="step-body">
+        <div class="instruction-list">
+          <div class="instruction">
+            <span class="num">1</span>
+            <span>In Compass, click <strong>+ Create database</strong> in the left sidebar</span>
+          </div>
+          <div class="instruction">
+            <span class="num">2</span>
+            <span>Set <strong>Database Name</strong> to <code>unify_labs</code></span>
+          </div>
+          <div class="instruction">
+            <span class="num">3</span>
+            <span>Set <strong>Collection Name</strong> to <code>interns</code></span>
+          </div>
+          <div class="instruction">
+            <span class="num">4</span>
+            <span>Click <strong>Create Database</strong></span>
+          </div>
+        </div>
+
+        <div class="db-visual">
+          <div class="db-box db-level">
+            <span class="db-icon">🗄</span>
+            <div>
+              <div class="db-type">Database</div>
+              <div class="db-name">unify_labs</div>
+            </div>
+          </div>
+          <div class="db-connector"></div>
+          <div class="db-box col-level">
+            <span class="db-icon">📂</span>
+            <div>
+              <div class="db-type">Collection</div>
+              <div class="db-name">interns</div>
+            </div>
+          </div>
+          <div class="db-connector"></div>
+          <div class="db-box doc-level">
+            <span class="db-icon">📄</span>
+            <div>
+              <div class="db-type">Documents</div>
+              <div class="db-name">3 records</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step-card" data-step="6">
+      <div class="step-header">
+        <div class="step-number">06</div>
+        <div class="step-info">
+          <h2>Insert 3 Sample Documents</h2>
+          <p>Add intern records with <code>name</code>, <code>role</code>, and <code>joinedDate</code> fields.</p>
+        </div>
+        <button class="check-btn" onclick="toggleStep(6)" aria-label="Mark step complete">
+          <span class="check-icon">✓</span>
+        </button>
+      </div>
+      <div class="step-body">
+        <div class="instruction-list">
+          <div class="instruction"><span class="num">1</span><span>Open the <strong>interns</strong> collection in Compass</span></div>
+          <div class="instruction"><span class="num">2</span><span>Click <strong>Add Data → Insert Document</strong></span></div>
+          <div class="instruction"><span class="num">3</span><span>Switch to <strong>JSON view</strong> and paste each document below</span></div>
+          <div class="instruction"><span class="num">4</span><span>Click <strong>Insert</strong> — repeat for all 3 documents</span></div>
+        </div>
+
+        <!-- Document 1 -->
+        <div class="doc-label">Document 1</div>
+        <div class="code-block" id="doc1">
+          <div class="code-header">
+            <span class="code-lang">JSON</span>
+            <button class="copy-btn" onclick="copyCode('doc1')">copy</button>
+          </div>
+          <pre><code>{
+  "name": "Alex Rivera",
+  "role": "Frontend Intern",
+  "joinedDate": "2024-06-01"
+}</code></pre>
+        </div>
+
+        <!-- Document 2 -->
+        <div class="doc-label">Document 2</div>
+        <div class="code-block" id="doc2">
+          <div class="code-header">
+            <span class="code-lang">JSON</span>
+            <button class="copy-btn" onclick="copyCode('doc2')">copy</button>
+          </div>
+          <pre><code>{
+  "name": "Priya Nair",
+  "role": "Backend Intern",
+  "joinedDate": "2024-06-03"
+}</code></pre>
+        </div>
+
+        <!-- Document 3 -->
+        <div class="doc-label">Document 3</div>
+        <div class="code-block" id="doc3">
+          <div class="code-header">
+            <span class="code-lang">JSON</span>
+            <button class="copy-btn" onclick="copyCode('doc3')">copy</button>
+          </div>
+          <pre><code>{
+  "name": "Jordan Lee",
+  "role": "Data Intern",
+  "joinedDate": "2024-06-05"
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="step-card" data-step="7">
+      <div class="step-header">
+        <div class="step-number">07</div>
+        <div class="step-info">
+          <h2>Verify in Compass &amp; Shell</h2>
+          <p>Confirm all documents are visible and queryable.</p>
+        </div>
+        <button class="check-btn" onclick="toggleStep(7)" aria-label="Mark step complete">
+          <span class="check-icon">✓</span>
+        </button>
+      </div>
+      <div class="step-body">
+        <p class="step-desc">In Compass, navigate to <strong>unify_labs → interns</strong> — you should see 3 documents. To also verify in the shell:</p>
+
+        <div class="code-block" id="cmd-verify">
+          <div class="code-header">
+            <span class="code-lang">MONGOSH</span>
+            <button class="copy-btn" onclick="copyCode('cmd-verify')">copy</button>
+          </div>
+          <pre><code>use unify_labs
+db.interns.find().pretty()</code></pre>
+        </div>
+
+        <div class="terminal-output">
+          <div class="terminal-bar">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="t-title">Expected Output</span>
+          </div>
+          <div class="terminal-body">
+            <span class="prompt">test&gt;</span> use unify_labs<br/>
+            <span class="t-success">switched to db unify_labs</span><br/>
+            <span class="prompt">unify_labs&gt;</span> db.interns.find().pretty()<br/>
+            <span class="t-muted">[</span><br/>
+            &nbsp;&nbsp;<span class="t-muted">{</span> <span class="t-key">_id</span>: ObjectId(...), <span class="t-key">name</span>: <span class="t-str">'Alex Rivera'</span>, <span class="t-key">role</span>: <span class="t-str">'Frontend Intern'</span>, ... <span class="t-muted">},</span><br/>
+            &nbsp;&nbsp;<span class="t-muted">{</span> <span class="t-key">_id</span>: ObjectId(...), <span class="t-key">name</span>: <span class="t-str">'Priya Nair'</span>, <span class="t-key">role</span>: <span class="t-str">'Backend Intern'</span>, ... <span class="t-muted">},</span><br/>
+            &nbsp;&nbsp;<span class="t-muted">{</span> <span class="t-key">_id</span>: ObjectId(...), <span class="t-key">name</span>: <span class="t-str">'Jordan Lee'</span>, <span class="t-key">role</span>: <span class="t-str">'Data Intern'</span>, ... <span class="t-muted">}</span><br/>
+            <span class="t-muted">]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── COMPLETION BANNER ── -->
+    <div class="completion-banner" id="completionBanner">
+      <div class="completion-inner">
+        <div class="completion-icon">✦</div>
+        <div>
+          <div class="completion-title">Environment Ready</div>
+          <div class="completion-sub">All 7 steps complete · <code>unify_labs</code> database is live</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>NoSQL Foundation · Database Groundwork</span>
+    <span>MongoDB Community · Compass · mongosh</span>
+  </footer>
+
+  <!-- ── TOAST ── -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
