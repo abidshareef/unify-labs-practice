@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced CRUD — Inventory Control</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <span class="pill">Advanced CRUD · Intermediate+</span>
+      <span class="clock" id="clock">--:--:--</span>
+    </div>
+    <h1>Shop Manager:<br/><span>Inventory Control</span></h1>
+    <p>Mass updates, tag management, and targeted deletions on your MongoDB shop.</p>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <span id="progressLabel">0 / 6 complete</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="objectives">
+      <div class="sec-label">// objectives</div>
+      <div class="obj-grid">
+        <div class="obj">⬡ <code>$inc</code> to update stock levels</div>
+        <div class="obj">⬡ <code>$set</code> + <code>updateMany()</code> for categories</div>
+        <div class="obj">⬡ <code>$push</code> to add tags to specific items</div>
+        <div class="obj">⬡ <code>deleteMany()</code> to clear zero-stock items</div>
+      </div>
+    </section>
+
+    <div class="divider">// MASS UPDATES</div>
+
+    <!-- STEP 1 -->
+    <div class="step" data-step="1">
+      <div class="step-head" onclick="toggleStep(1)">
+        <span class="sn">01</span>
+        <div class="si"><h2>Increase Electronics Price</h2><p>Use <code>$inc</code> to raise all Electronics prices by <code>+10</code>.</p></div>
+        <button class="check">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="tip">
+          <code>$inc</code> adds to the existing value. Positive = increase, negative = decrease.
+        </div>
+        <div class="codeblock" id="s1">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s1')">copy</button></div>
+          <pre><code>db.products.updateMany(
+  { category: "Electronics" },
+  { $inc: { price: 10 } }
+)</code></pre>
+        </div>
+        <div class="result-row">
+          <div class="result-box"><div class="rl">matched</div><div class="rv">2</div></div>
+          <div class="result-box"><div class="rl">modified</div><div class="rv g">2</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" data-step="2">
+      <div class="step-head" onclick="toggleStep(2)">
+        <span class="sn">02</span>
+        <div class="si"><h2>Flag Featured Products</h2><p>Set <code>featured: true</code> for all items where <code>price &gt; 500</code>.</p></div>
+        <button class="check">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="tip">
+          <code>$gt</code> means "greater than". After step 1, the 4K Monitor is now <strong>$509.99</strong> — it qualifies.
+        </div>
+        <div class="codeblock" id="s2">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s2')">copy</button></div>
+          <pre><code>db.products.updateMany(
+  { price: { $gt: 500 } },
+  { $set: { featured: true } }
+)</code></pre>
+        </div>
+        <div class="result-row">
+          <div class="result-box"><div class="rl">matched</div><div class="rv">1</div></div>
+          <div class="result-box"><div class="rl">modified</div><div class="rv g">1</div></div>
+          <div class="result-box"><div class="rl">field added</div><div class="rv a">featured</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" data-step="3">
+      <div class="step-head" onclick="toggleStep(3)">
+        <span class="sn">03</span>
+        <div class="si"><h2>Update Category Name</h2><p>Rename <code>"Clothing"</code> to <code>"Apparel"</code> across all documents.</p></div>
+        <button class="check">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="codeblock" id="s3">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s3')">copy</button></div>
+          <pre><code>db.products.updateMany(
+  { category: "Clothing" },
+  { $set: { category: "Apparel" } }
+)</code></pre>
+        </div>
+        <div class="terminal">
+          <div class="t-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span>Verify rename</span></div>
+          <div class="t-body">
+            db.products.find({ category: <span class="a">"Apparel"</span> })<br/>
+            <span class="g">// returns Denim Jacket + Linen Shirt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" data-step="4">
+      <div class="step-head" onclick="toggleStep(4)">
+        <span class="sn">04</span>
+        <div class="si"><h2>Push Tag to New Arrivals</h2><p>Add <code>"new-arrival"</code> tag to items with <code>stock &gt; 100</code>.</p></div>
+        <button class="check">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="tip">
+          <code>$push</code> appends a value to an array field. If the field doesn't exist, MongoDB creates it automatically.
+        </div>
+        <div class="codeblock" id="s4">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s4')">copy</button></div>
+          <pre><code>db.products.updateMany(
+  { stock: { $gt: 100 } },
+  { $push: { tags: "new-arrival" } }
+)</code></pre>
+        </div>
+        <div class="terminal">
+          <div class="t-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span>Expected doc shape</span></div>
+          <div class="t-body">
+            {<br/>
+            &nbsp;&nbsp;name: <span class="a">'Linen Shirt'</span>,<br/>
+            &nbsp;&nbsp;stock: <span class="b">200</span>,<br/>
+            &nbsp;&nbsp;tags: [ <span class="a">'new-arrival'</span> ]<br/>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">// CLEANUP</div>
+
+    <!-- STEP 5 -->
+    <div class="step" data-step="5">
+      <div class="step-head" onclick="toggleStep(5)">
+        <span class="sn">05</span>
+        <div class="si"><h2>Delete Zero-Stock Items</h2><p>Remove all documents where <code>stock</code> equals <code>0</code>.</p></div>
+        <button class="check">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="tip warn">
+          <strong>⚠ Destructive operation.</strong> Always run a <code>find()</code> with the same filter first to preview what will be deleted.
+        </div>
+        <div class="codeblock" id="s5-preview">
+          <div class="cb-head"><span>PREVIEW FIRST</span><button onclick="cp('s5-preview')">copy</button></div>
+          <pre><code>db.products.find({ stock: 0 })</code></pre>
+        </div>
+        <div class="codeblock" id="s5">
+          <div class="cb-head"><span>THEN DELETE</span><button onclick="cp('s5')">copy</button></div>
+          <pre><code>db.products.deleteMany({ stock: 0 })</code></pre>
+        </div>
+        <div class="result-row">
+          <div class="result-box"><div class="rl">deletedCount</div><div class="rv r">varies</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step" data-step="6">
+      <div class="step-head" onclick="toggleStep(6)">
+        <span class="sn">06</span>
+        <div class="si"><h2>Verify with countDocuments()</h2><p>Confirm remaining inventory count after deletion.</p></div>
+        <button class="check">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="codeblock" id="s6">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s6')">copy</button></div>
+          <pre><code>// Total remaining products
+db.products.countDocuments()
+
+// Still has stock
+db.products.countDocuments({ stock: { $gt: 0 } })
+
+// Confirm zero-stock is gone
+db.products.countDocuments({ stock: 0 })</code></pre>
+        </div>
+        <div class="terminal">
+          <div class="t-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span>Expected Output</span></div>
+          <div class="t-body">
+            <span class="g">5</span> &nbsp;<span class="dim">// total (all had stock > 0)</span><br/>
+            <span class="g">5</span> &nbsp;<span class="dim">// stock > 0</span><br/>
+            <span class="b">0</span> &nbsp;<span class="dim">// zero-stock cleared ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="completion" id="completion">
+      <span class="star">✦</span>
+      <div>
+        <div class="comp-title">Inventory Updated</div>
+        <div class="comp-sub">All 6 steps complete · shop_db is clean and current</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>Advanced CRUD · Intermediate+</span>
+    <span>$inc · $set · $push · updateMany · deleteMany</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

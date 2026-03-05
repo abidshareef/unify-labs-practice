@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRUD Operations — The Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <span class="pill">CRUD · Intermediate</span>
+      <span class="clock" id="clock">--:--:--</span>
+    </div>
+    <h1>Data Architect:<br/><span>The Shop</span></h1>
+    <p>Build the data layer for a MongoDB-powered e-commerce store.</p>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <span id="progressLabel">0 / 4 complete</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Objectives -->
+    <section class="objectives">
+      <div class="sec-label">// objectives</div>
+      <div class="obj-grid">
+        <div class="obj">⬡ Use <code>insertMany()</code> for 5 products</div>
+        <div class="obj">⬡ Nested <code>specs</code> objects per document</div>
+        <div class="obj">⬡ Sort by price descending</div>
+        <div class="obj">⬡ Limit results to top 2</div>
+      </div>
+    </section>
+
+    <!-- STEP 1 -->
+    <div class="step" data-step="1">
+      <div class="step-head" onclick="toggleStep(1)">
+        <span class="sn">01</span>
+        <div class="si">
+          <h2>Switch to Database</h2>
+          <p>Select or create the <code>shop_db</code> database in mongosh.</p>
+        </div>
+        <button class="check" aria-label="Mark done">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="codeblock" id="s1">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s1')">copy</button></div>
+          <pre><code>use shop_db</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" data-step="2">
+      <div class="step-head" onclick="toggleStep(2)">
+        <span class="sn">02</span>
+        <div class="si">
+          <h2>Insert 5 Products</h2>
+          <p>Bulk-insert with nested <code>specs</code> across 3 categories.</p>
+        </div>
+        <button class="check" aria-label="Mark done">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="tip">Each document includes <strong>price</strong>, <strong>stock</strong>, and a nested <strong>specs</strong> object.</div>
+        <div class="codeblock" id="s2">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s2')">copy</button></div>
+          <pre><code>db.products.insertMany([
+  {
+    name: "Wireless Headphones",
+    category: "Electronics",
+    price: 149.99,
+    stock: 42,
+    specs: { color: "Black", weight: "250g", wireless: true }
+  },
+  {
+    name: "4K Monitor",
+    category: "Electronics",
+    price: 499.99,
+    stock: 15,
+    specs: { color: "Silver", weight: "4.5kg", resolution: "3840x2160" }
+  },
+  {
+    name: "Denim Jacket",
+    category: "Clothing",
+    price: 89.99,
+    stock: 120,
+    specs: { color: "Blue", weight: "600g", size: "M" }
+  },
+  {
+    name: "Linen Shirt",
+    category: "Clothing",
+    price: 34.99,
+    stock: 200,
+    specs: { color: "White", weight: "200g", size: "L" }
+  },
+  {
+    name: "Oak Desk",
+    category: "Furniture",
+    price: 349.99,
+    stock: 8,
+    specs: { color: "Brown", weight: "22kg", material: "Solid Oak" }
+  }
+])</code></pre>
+        </div>
+        <div class="schema-row">
+          <div class="schema-box">
+            <div class="schema-label">Electronics</div>
+            <div class="schema-val">2 docs</div>
+          </div>
+          <div class="schema-box">
+            <div class="schema-label">Clothing</div>
+            <div class="schema-val">2 docs</div>
+          </div>
+          <div class="schema-box">
+            <div class="schema-label">Furniture</div>
+            <div class="schema-val">1 doc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" data-step="3">
+      <div class="step-head" onclick="toggleStep(3)">
+        <span class="sn">03</span>
+        <div class="si">
+          <h2>Find Electronics</h2>
+          <p>Filter all products where <code>category</code> is <code>"Electronics"</code>.</p>
+        </div>
+        <button class="check" aria-label="Mark done">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="codeblock" id="s3">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s3')">copy</button></div>
+          <pre><code>db.products.find({ category: "Electronics" }).pretty()</code></pre>
+        </div>
+        <div class="terminal">
+          <div class="t-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span>Expected Output</span>
+          </div>
+          <div class="t-body">
+            <span class="g">// 2 documents returned</span><br/>
+            { name: <span class="a">'Wireless Headphones'</span>, category: <span class="a">'Electronics'</span>, price: <span class="b">149.99</span>, ... }<br/>
+            { name: <span class="a">'4K Monitor'</span>, category: <span class="a">'Electronics'</span>, price: <span class="b">499.99</span>, ... }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" data-step="4">
+      <div class="step-head" onclick="toggleStep(4)">
+        <span class="sn">04</span>
+        <div class="si">
+          <h2>Top 2 Most Expensive</h2>
+          <p>Sort by <code>price</code> descending, limit to <code>2</code>.</p>
+        </div>
+        <button class="check" aria-label="Mark done">✓</button>
+      </div>
+      <div class="step-body">
+        <div class="codeblock" id="s4">
+          <div class="cb-head"><span>MONGOSH</span><button onclick="cp('s4')">copy</button></div>
+          <pre><code>db.products.find().sort({ price: -1 }).limit(2).pretty()</code></pre>
+        </div>
+        <div class="terminal">
+          <div class="t-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span>Expected Output</span>
+          </div>
+          <div class="t-body">
+            <span class="g">// Sorted desc · limit 2</span><br/>
+            { name: <span class="a">'4K Monitor'</span>, price: <span class="b">499.99</span>, category: <span class="a">'Electronics'</span> }<br/>
+            { name: <span class="a">'Oak Desk'</span>, price: <span class="b">349.99</span>, category: <span class="a">'Furniture'</span> }
+          </div>
+        </div>
+        <div class="tip">
+          <strong>-1</strong> = descending &nbsp;|&nbsp; <strong>1</strong> = ascending &nbsp;|&nbsp; <code>.limit(n)</code> caps the result set.
+        </div>
+      </div>
+    </div>
+
+    <div class="completion" id="completion">
+      <span class="star">✦</span>
+      <div>
+        <div class="comp-title">Shop Database Ready</div>
+        <div class="comp-sub">All 4 steps complete · <code>shop_db.products</code> is live</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>CRUD Operations · Intermediate</span>
+    <span>MongoDB · insertMany · find · sort · limit</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
