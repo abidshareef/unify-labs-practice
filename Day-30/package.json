@@ -1,0 +1,28 @@
+{
+  "name": "titan-marketplace",
+  "version": "1.0.0",
+  "description": "TITAN — High-Performance E-Commerce Platform. Capstone Portfolio Project.",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "seed": "node scripts/seed.js",
+    "lint": "eslint . --ext .js"
+  },
+  "dependencies": {
+    "mongodb": "^6.21.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.6.1",
+    "vercel": "^33.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
