@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Text Formatter</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="header-label">Utility&nbsp;App&nbsp;/&nbsp;v1.0</div>
+    <div class="header-title">Smart <span>Text</span> Formatter</div>
+    <div class="header-meta">
+      <div class="tag">JS · Strings</div>
+      <div class="issue">Arrow Functions · String Methods · Math</div>
+    </div>
+  </header>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="layout">
+
+    <!-- LEFT: Input + Controls -->
+    <div class="left-panel">
+
+      <div class="panel-header">
+        <span class="panel-title">Input Text</span>
+        <span class="char-count" id="charCount">0 chars</span>
+      </div>
+
+      <textarea
+        id="inputText"
+        placeholder="Type or paste your text here…&#10;&#10;e.g. the quick brown fox jumps over the lazy dog"
+        spellcheck="false"
+      ></textarea>
+
+      <div class="controls">
+
+        <div class="divider-row">
+          <span class="divider-label">Functions</span>
+          <span class="pill">Arrow · Reusable</span>
+        </div>
+
+        <div class="controls-row">
+          <button class="btn primary" onclick="runTitleCase()">⬡ Title Case</button>
+          <button class="btn"         onclick="runVowels()">◈ Count Vowels</button>
+          <button class="btn"         onclick="runSecret()">▣ Secret Mode</button>
+        </div>
+
+        <div class="secret-row">
+          <label for="secretWords">Censor words:</label>
+          <input
+            class="secret-input"
+            id="secretWords"
+            type="text"
+            placeholder="word1, word2, word3"
+          />
+        </div>
+
+        <div class="controls-row">
+          <button class="btn"        onclick="runAll()">↻ Run All</button>
+          <button class="btn danger" onclick="clearAll()">✕ Clear</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: Stats + Output -->
+    <div class="right-panel">
+
+      <div class="stats-strip">
+        <div class="stat-box highlight">
+          <div class="stat-value" id="statChars">0</div>
+          <div class="stat-label">Characters</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statWords">0</div>
+          <div class="stat-label">Words</div>
+        </div>
+        <div class="stat-box highlight2">
+          <div class="stat-value" id="statVowels">0</div>
+          <div class="stat-label">Vowels</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statSentences">0</div>
+          <div class="stat-label">Sentences</div>
+        </div>
+      </div>
+
+      <div class="output-section">
+
+        <div class="output-tabs">
+          <button class="tab active" onclick="switchTab('title')">Title Case</button>
+          <button class="tab"        onclick="switchTab('vowels')">Vowels</button>
+          <button class="tab"        onclick="switchTab('secret')">Secret</button>
+        </div>
+
+        <!-- Title Case Pane -->
+        <div class="output-pane active" id="pane-title">
+          <div class="output-box empty" id="out-title">Run ⬡ Title Case to see output…</div>
+          <div class="output-actions">
+            <button class="btn" onclick="copyOutput('out-title')">↗ Copy</button>
+            <button class="btn" onclick="pasteToInput('out-title')">↙ Use as Input</button>
+          </div>
+        </div>
+
+        <!-- Vowels Pane -->
+        <div class="output-pane" id="pane-vowels">
+          <div class="output-box empty vowel-highlight" id="out-vowels">Run ◈ Count Vowels to see output…</div>
+          <div class="output-actions">
+            <button class="btn" onclick="copyOutput('out-vowels', true)">↗ Copy Plain</button>
+          </div>
+        </div>
+
+        <!-- Secret Pane -->
+        <div class="output-pane" id="pane-secret">
+          <div class="output-box empty" id="out-secret">Run ▣ Secret Mode to see output…</div>
+          <div class="output-actions">
+            <button class="btn" onclick="copyOutput('out-secret', true)">↗ Copy</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>Smart Text Formatter · Intermediate–Beginner JS Project</span>
+    <span>Arrow Functions · String Methods · Math Object</span>
+  </footer>
+
+  <!-- ── TOAST ── -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
